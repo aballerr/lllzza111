@@ -57,7 +57,7 @@ const TokenContainer = ({
       <div
         className={`transition-opacity duration-300 ${
           isDragging ? "opacity-50" : "opacity-100"
-        } relative bg-gray-200 rounded-xl overflow-hidden hover:opacity-60 h-full flex flex-col justify-between cursor-pointer`}
+        } relative bg-gray-200 rounded-xl overflow-hidden hover:opacity-80 h-full flex flex-col justify-between cursor-pointer`}
         // @ts-ignore
         ref={drag}
       >
