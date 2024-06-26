@@ -12,11 +12,9 @@ export const getTokens = (ownerAddrOrName: string, limit: number = 10) =>
           tokens(ownerAddrOrName: "${ownerAddrOrName}", limit: ${limit}) {
             tokens {
               id
-              metadata
               tokenId
               media {
                 type
-                urls
                 url
               }
               collection {

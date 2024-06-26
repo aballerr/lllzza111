@@ -38,8 +38,14 @@ const Header = ({
     setLoading(true);
     try {
       const result = await getTokens(address, limit);
+
+      if (result?.data?.tokens?.tokens.length === 0) {
+        toast.warn("There are no tokens associated with this address");
+      }
+
       setTokens(result?.data?.tokens?.tokens ?? []);
     } catch (err) {
+      console.log(err);
       toast.error(`Failed to get data for address: ${address}`);
       setAddress("");
       setTokens([]);
