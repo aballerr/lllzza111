@@ -55,22 +55,21 @@ const TokenContainer = ({
     // @ts-ignore
     <div ref={drop}>
       <div
-        style={{
-          opacity: isDragging ? 0.5 : 1,
-        }}
+        className={`transition-opacity duration-300 ${
+          isDragging ? "opacity-50" : "opacity-100"
+        } relative bg-gray-200 rounded-xl overflow-hidden hover:opacity-60 h-full flex flex-col justify-between cursor-pointer`}
         // @ts-ignore
         ref={drag}
-        className="relative bg-gray-200 rounded-xl overflow-hidden hover:opacity-60 h-full flex flex-col justify-between"
       >
         <img
           key={token.id}
-          className="w-full h-auto object-cover rounded-t-xl cursor-pointer"
+          className="w-full h-auto object-cover rounded-t-xl"
           src={token.media.url}
           alt="Token"
         />
         <div className="py-3 px-4 flex items-center justify-between">
           <div className="text-black">{token.collection.name}</div>
-          <div className="w-[20px]">
+          <div className="w-5">
             <FaRegTrashAlt
               size={20}
               className="cursor-pointer text-zinc-900 hover:text-zinc-500 transition duration-100 ease-in-out"
